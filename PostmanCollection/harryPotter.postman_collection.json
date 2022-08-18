@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "f36ecb38-6e14-4060-88fe-29083551134a",
+		"name": "harryPotter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/harrypotter/characters?mouthOfBirth=12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/harrypotter/characters?mouthOfBirth=12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"harrypotter",
+						"characters"
+					],
+					"query": [
+						{
+							"key": "mouthOfBirth",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/harrypotter/character",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"John Mendez\",\r\n        \"alternate_names\": [],\r\n        \"species\": \"half-giant\",\r\n        \"gender\": \"male\",\r\n        \"house\": \"Gryffindor\",\r\n        \"dateOfBirth\": \"29-12-1982\",\r\n        \"yearOfBirth\": \"1928\",\r\n        \"wizard\": true,\r\n        \"ancestry\": \"half-blood\",\r\n        \"eyeColour\": \"black\",\r\n        \"hairColour\": \"black\",\r\n        \"wand\": {\r\n            \"wood\": \"oak\",\r\n            \"core\": \"\",\r\n            \"length\": \"16\"\r\n        },\r\n        \"patronus\": \"\",\r\n        \"hogwartsStudent\": false,\r\n        \"hogwartsStaff\": true,\r\n        \"actor\": \"Robbie Coltrane\",\r\n        \"alternate_actors\": [],\r\n        \"alive\": true,\r\n        \"image\": \"http://hp-api.herokuapp.com/images/hagrid.png\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/harrypotter/character",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"harrypotter",
+						"character"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
