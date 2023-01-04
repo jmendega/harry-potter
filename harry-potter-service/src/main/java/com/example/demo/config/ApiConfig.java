@@ -16,7 +16,7 @@ public class ApiConfig {
 	@Bean
 	ApiServiceImpl gestionApi() {
 		Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://hp-api.herokuapp.com/api/characters/")
+                .baseUrl("https://hp-api.onrender.com/api/characters/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 		log.info("Creating ApiServiceImpl rest client host {}", "http://hp-api.herokuapp.com/api/characters/");
