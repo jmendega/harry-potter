@@ -12,9 +12,24 @@ import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+import lombok.extern.slf4j.Slf4j;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+@Slf4j
 @EnableWs
 @Configuration
 public class Config extends WsConfigurerAdapter {
+	
+	@Bean
+	ApiServiceImpl gestionApi() {
+		Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://harry-potter-service-1672868069915.azurewebsites.net/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+		log.info("Creating ApiServiceImpl rest client host {}", "http://hp-api.herokuapp.com/api/characters/");
+		return retrofit.create(ApiServiceImpl.class);
+	}
 	@Bean
 	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
